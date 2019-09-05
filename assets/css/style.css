@@ -1,4 +1,5 @@
 .navbar {
+    background-color: blue;
     margin-bottom: 25px;
 }
 
@@ -16,7 +17,13 @@
     margin: 5px;
 }
 .vidCard {
-    max-width: 100%;
+    max-width: 100%; 
     height: 150px;
     border: 1px solid black;
+}
+
+.ArtistImage {
+    text-align: center;
+    max-width: 100%; 
+    height: 150px;
 }
