@@ -52,16 +52,17 @@ var songSnippets =[];
 
             $.ajax(settings).then(function (response) {
                 // console.log (settings);  
-                console.log(response.response.hits[1]);
-                
-            var hello = ("hello");
-                var songName = $("<h1>").text(response.response.hits[0].result.full_title);
-                // var artistName = $("<h2>").text(response.hits.result.primary_artist);
-                // var artistImage = $("<a>").attr("href", response.hits.result.header_image_thumbnail_url);
-                // //var artistURL = $("<img>").attr("src", response.thumb_url);
-                //var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
-            $("#gifs-appear-here").empty();
-            $("#gifs-appear-here").append(hello, songName);            
+
+                console.log(response.response.hits[0]);
+            
+            //for (i=0, i<response.response.hits.lenght; i++)    
+                    var songName = $("<h3>").text(response.response.hits[0].result.full_title);
+                    var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url);
+                    //var artistURL = $("<a>").attr("href", response.response.hits[0].result.stats.url);
+                    var artistName = $("<h3>").text(response.response.hits[0].result.primary_artist.name) 
+                //console.log(artistURL);
+                $("#gifs-appear-here").empty();
+                $("#gifs-appear-here").append(songName, artistImage, artistName);            
                     //songName, artistName, artistURL, artistImage, goToArtist
 
             // for (var i=0; i<response.length;i++) {
