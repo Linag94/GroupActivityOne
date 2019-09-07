@@ -3,27 +3,36 @@
     margin-bottom: 25px;
 }
 
-.my_container {
+#lyricQuery {
     background-color: lightgray;
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 5px;
 }
 
-.songList {
-    text-align: center;
-}
-.youTubeCard{
-    margin: 5px;
-}
-.vidCard {
-    max-width: 100%; 
-    height: 150px;
-    border: 1px solid black;
+#gifs-appear-here {
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+
 }
 
-.ArtistImage {
-    text-align: center;
-    max-width: 100%; 
-    height: 150px;
+#queryResults {
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+
 }
+#ArtistImage {
+    font-weight: 700!important;
+    text-align: center;
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+
+
