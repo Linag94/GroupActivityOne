@@ -22,27 +22,7 @@ $("#Find-Song").on("click", function (event) {
     songSnippets.push(lyricCheck);
     console.log(songSnippets);
     createObject();
-    // listeningEvent();
-
-});
-
-// If we start with Clickable objectImages
-createObject();
-
-
-
-$(document).on("click", "button.lyric", function (event) {
-    var myType = $(this).data("type");
-    console.log(myType);
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://genius.p.rapidapi.com/search?q=" + myType,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "genius.p.rapidapi.com",
-            "x-rapidapi-key": "8c80b39df4mshd657f02eb1198f1p1c1009jsn71a194fe5244"
-        }
+  
     }
 
     $.ajax(settings).done(function (response) {
