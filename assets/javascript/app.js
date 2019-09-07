@@ -3,6 +3,8 @@
 //var songSnippets2 = ["I just took a DNA test", "Check the mirror, we're lookin' fly"];
 var songSnippets = [];
 
+
+
 //convert songSnippets into actionable objects
 function createObject() {
     $("#queryResults").empty();
@@ -43,12 +45,7 @@ $("#Find-Song").on("click", function (event) {
             }
         }
 
-        $.ajax(songSetting).done(function (songResponse) {
-            console.log(songResponse.response);
-            const appleMusicPath = songResponse.response.song.apple_music_player_url;
-            console.log('appleMusicPath', appleMusicPath);
-            $("#gifs-appear-here").append("<iframe src="+appleMusicPath+"></iframe>");
-        });
+
 
 
 
