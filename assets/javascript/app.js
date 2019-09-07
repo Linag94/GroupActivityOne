@@ -57,10 +57,10 @@ var songSnippets =[];
                 console.log(response.response.hits[1]);
                 
             var hello = ("hello");
-                var songName = $("<h1>").text(response.response.hits[0].result.full_title);
+                var songName = $("<h3>").text(response.response.hits[0].result.full_title);
                 // var artistName = $("<h2>").text(response.hits.result.primary_artist);
                 // var artistURL = $("<a>").attr("href", response.hits.result.header_image_thumbnail_url)
-                var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url);
+                var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url).attr("class", "artistImage");
                 //var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
             $("#gifs-appear-here").empty();
             $("#gifs-appear-here").append(songName, artistImage);            

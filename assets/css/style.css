@@ -34,6 +34,10 @@
     margin-bottom: 25px;
     border-radius: 5px;
 }
-
+.artistImage {
+    width: 90%;
+    display: block;
+    margin: auto;
+}
 
 
