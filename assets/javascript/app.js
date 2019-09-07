@@ -3,6 +3,8 @@
     //var songSnippets2 = ["I just took a DNA test", "Check the mirror, we're lookin' fly"];
 var songSnippets =[];
 
+
+
 //convert songSnippets into actionable objects
     function createObject() {
         $("#queryResults").empty();
@@ -57,11 +59,11 @@ var songSnippets =[];
             var hello = ("hello");
                 var songName = $("<h1>").text(response.response.hits[0].result.full_title);
                 // var artistName = $("<h2>").text(response.hits.result.primary_artist);
-                // var artistImage = $("<a>").attr("href", response.hits.result.header_image_thumbnail_url);
-                // //var artistURL = $("<img>").attr("src", response.thumb_url);
+                // var artistURL = $("<a>").attr("href", response.hits.result.header_image_thumbnail_url)
+                var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url);
                 //var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
             $("#gifs-appear-here").empty();
-            $("#gifs-appear-here").append(hello, songName);            
+            $("#gifs-appear-here").append(songName, artistImage);            
                     //songName, artistName, artistURL, artistImage, goToArtist
 
             // for (var i=0; i<response.length;i++) {
