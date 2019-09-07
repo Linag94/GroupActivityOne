@@ -22,7 +22,7 @@
 
     <div class="navigator">
       <nav class="navbar navbar-expand-lg navbar-blue bg-light">
-          <a class="navbar-brand mx-auto" href="#">SOME CLEVER NAME FOR WEB PAGE</a>
+        <a class="navbar-brand mx-auto" href="#">SOME CLEVER NAME FOR WEB PAGE</a>
       </nav>
     </div>
     <!-- container user input/ content -->
@@ -32,17 +32,17 @@
         <div id="queryResults"></div>
         <div id="gifs-appear-here"></div>
       </div>
-    
+
 
       <div class="col-4">
         <form id="lyricQuery">
           <strong><label for="searchInput">Enter Lyrics to Find Song:</label></strong>
           <input type="text" id="lyricLookup"></br>
           <input id="Find-Song" type="submit" value="Find Song">
-            <!-- <small id="songHelp" class="form-text text-muted">Search for whatever you'd like!</small> -->
+          <!-- <small id="songHelp" class="form-text text-muted">Search for whatever you'd like!</small> -->
         </form>
       </div>
-  </div>
+    </div>
 
     <!-- container for images -->
     <!-- <div class="jumbotron jumbotron-fluid">
@@ -52,7 +52,7 @@
     </div> -->
     <div class="col-13">
       <div class="my_container ArtistImage">
-          <p class="font-weight-bold">Artist Photo Album</p>
+        <p class="font-weight-bold">Artist Photo Album</p>
         <div class="artistCard">
           <div class="imgCard">
             <img src="#" alt="Image of Artist" />
@@ -60,8 +60,8 @@
             <img src="#" alt="Image of Artist" />
             <img src="#" alt="Image of Artist" />
             <img src="#" alt="Image of Artist" />
-          </div> 
-        </div>  
+          </div>
+        </div>
       </div>
     </div>
 
@@ -71,12 +71,31 @@
 
   <!-- Jquery  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
   <!--link app.js  -->
+  <!-- <script>
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://genius.p.rapidapi.com/songs/3039923",
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "genius.p.rapidapi.com",
+        "x-rapidapi-key": "adc8a9d633msh6bcf26b570c7072p1c3c46jsn55780af412b3"
+      }
+    }
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  </script> -->
   <script src="assets/javascript/app.js"></script>
 
 
