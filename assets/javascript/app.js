@@ -56,25 +56,36 @@ var songSnippets =[];
                 console.log(response.response.hits[0]);
             
             //for (i=0, i<response.response.hits.lenght; i++)    
-                    var songName = $("<h3>").text(response.response.hits[0].result.full_title);
-                    var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url);
-                    //var artistURL = $("<a>").attr("href", response.response.hits[0].result.stats.url);
-                    var artistName = $("<h3>").text(response.response.hits[0].result.primary_artist.name) 
-                //console.log(artistURL);
-                $("#gifs-appear-here").empty();
-                $("#gifs-appear-here").append(songName, artistImage, artistName);            
-                    //songName, artistName, artistURL, artistImage, goToArtist
+                    var songName = $("<h4>").text(response.response.hits[0].result.full_title);
+                    var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url).attr("class", "artistImage");
+                    var songLyrics = $("<a>").attr("href", response.response.hits[0].result.url).text("Click for Song Lyrics");
+                    var artistInfo = $("<a>").attr("href", response.response.hits[0].result.primary_artist.url).text("Click for Artist Info.");
+                    var myartistName = $("<h1>").text(response.response.hits[0].result.primary_artist.name);
+                    var artistName = encodeURIComponent(myartistName)
+                    
+                // $("#gifs-appear-here").empty();
+                // $("#gifs-appear-here").append(songName, artistImage, songLyrics, artistInfo);   
 
-            // for (var i=0; i<response.length;i++) {
-            //     var geniusReturn = $("<div>");
-            //     var p = $("<p>").text("Song Title" + response); 
-            //     var artImage = response[i].hits.result.song_art_image_url;
-            //     var image = $("<img>");
-            //     image.attr("src", artImage)
-            //     geniusReturn.append(p);
-            //     console.log(geniusReturn); 
-            //     geniusReturn.append(image);
-            //     $("#queryResults").append(response);  
+                        var queryURL = "https://rest.bandsintown.com/artists/" + artistName + "?app_id=codingbootcamp";
+                        console.log(artistName);
+                        $.ajax({
+                        url: queryURL,
+                        method: "GET"
+                        }).then(function(response) {
+
+                        // Printing the entire object to console
+                        console.log(artistName);
+
+                        // Constructing HTML containing the artist information 
+                        var tourDates = $("<a>").attr("href", response.url).text("Click for Upcoming Tour Dates");
+
+                        // // Empty the contents of the artist-div, append the new artist content
+                        $("#gifs-appear-here").empty();
+                        $("#gifs-appear-here").append(songName, artistImage, songLyrics, artistInfo, tourDates);
+
+                    });
+            
+                 
             });
         })        
     }
