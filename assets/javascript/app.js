@@ -1,57 +1,50 @@
-    //alert("we're up");
+//alert("we're up");
 
-    //var songSnippets2 = ["I just took a DNA test", "Check the mirror, we're lookin' fly"];
-var songSnippets =[];
+//var songSnippets2 = ["I just took a DNA test", "Check the mirror, we're lookin' fly"];
+var songSnippets = [];
+
+
 
 //convert songSnippets into actionable objects
-    function createObject() {
-        $("#queryResults").empty();
-        for (var i=0; i<songSnippets.length; i++){
-        var a=$("<button>");
+function createObject() {
+    $("#queryResults").empty();
+    for (var i = 0; i < songSnippets.length; i++) {
+        var a = $("<button>");
         a.addClass("lyric");
-        a.attr("data-type", songSnippets[i]);  
-        a.text(songSnippets[i]);  
+        a.attr("data-type", songSnippets[i]);
+        a.text(songSnippets[i]);
         $("#queryResults").append(a)
-        };
     };
+};
 
-    // field entry on form is captured
-    $("#Find-Song").on("click", function(event){
-        event.preventDefault();
-        var lyricCheck = $("#lyricLookup").eq(0).val().trim();
-        songSnippets.push(lyricCheck); 
-        console.log(songSnippets);
-        createObject();
-        listeningEvent();
-    
-    }); 
-
-    // If we start with Clickable objectImages
+// field entry on form is captured
+$("#Find-Song").on("click", function (event) {
+    event.preventDefault();
+    var lyricCheck = $("#lyricLookup").eq(0).val().trim();
+    songSnippets.push(lyricCheck);
+    console.log(songSnippets);
     createObject();
-    listeningEvent();
-    
+  
+    }
 
-    // $(document).on('readystatechange', readyStateChanged); 
+    $.ajax(settings).done(function (response) {
+        console.log(response.response.hits[0]);
+        const mySongDetail = response.response.hits[0];
 
-    function listeningEvent(){
-        $("button.lyric").on("click", function(event) {    
-            var myType = $(this).data("type");
-            //var type = myType.replace(/ /g,"");
-            var type = encodeURIComponent(myType);
-            var settings = {
-                "async": true,
-                "crossDomain": true,
-                "url": "https://genius.p.rapidapi.com/search?q=" + type,
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "genius.p.rapidapi.com",
-                    "x-rapidapi-key": "8c80b39df4mshd657f02eb1198f1p1c1009jsn71a194fe5244"
-                }
+        // add code to append the details of this song on the page
+        const songAPIPath = mySongDetail.result.api_path;
+
+        var songSetting = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://genius.p.rapidapi.com" + songAPIPath,
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "genius.p.rapidapi.com",
+                "x-rapidapi-key": "8c80b39df4mshd657f02eb1198f1p1c1009jsn71a194fe5244"
             }
-            console.log(type);
+        }
 
-            $.ajax(settings).then(function (response) {
-                // console.log (settings);  
 
                 console.log(response.response.hits[0]);
             
@@ -89,3 +82,4 @@ var songSnippets =[];
             });
         })        
     }
+

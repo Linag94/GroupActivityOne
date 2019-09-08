@@ -1,43 +1,55 @@
 
 @import url(https://fonts.googleapis.com/css?family=Advent+Pro:100);
-body {
- background:  url(https://media.giphy.com/media/13EnFYzizSbY9W/giphy.gif) no-repeat center center fixed;
- background-size: cover;
+body { 
+  background:  url(https://media.giphy.com/media/13EnFYzizSbY9W/giphy.gif) no-repeat center center fixed; 
+  background-size: cover;
 }
+
+
+
 .navbar {
    margin-bottom: 25px;
 }
+
+
 #lyricQuery {
-   background-color: lightgray;
-   padding: 25px;
-   margin-bottom: 25px;
-   border-radius: 5px;
-   
+    background-color: lightgray;
+    /* background:transparent url('/images/trans-bg.png') repeat center top; */
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+
 }
+
 #gifs-appear-here {
-   background-color: lightgray;
-   padding: 25px;
-   margin-bottom: 25px;
-   border-radius: 5px;
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    
+
 }
+
 #queryResults {
-   background-color: lightgray;
-   padding: 25px;
-   margin-bottom: 25px;
-   border-radius: 5px;
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+
 }
 #ArtistImage {
-   font-weight: 700!important;
-   text-align: center;
-   background-color: lightgray;
-   padding: 25px;
-   margin-bottom: 25px;
-   border-radius: 5px;
+    font-weight: 700!important;
+    text-align: center;
+    background-color: lightgray;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
 }
 .artistImage {
-   width: 90%;
-   display: block;
-   margin: auto;
+    width: 90%;
+    display: block;
+    margin: auto;
+
 }
 .container div {
    background: transparent;
