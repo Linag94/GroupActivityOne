@@ -29,7 +29,7 @@ body {
 }
 
 #queryResults {
-    background-color: lightgray;
+    background: transparent;
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 5px;
@@ -51,4 +51,16 @@ body {
 
 .container div {
     background: transparent;
+}
+
+#lyricLookup {
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+
+#Find-Song {
+    width: 90%;
+    display: block;
+    margin: auto;
 }
