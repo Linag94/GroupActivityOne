@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Advent+Pro:100);
 body { 
   background:  url(https://media.giphy.com/media/13EnFYzizSbY9W/giphy.gif) no-repeat center center fixed; 
@@ -5,10 +6,11 @@ body {
 }
 
 
+
 .navbar {
-    
-    margin-bottom: 25px;
+   margin-bottom: 25px;
 }
+
 
 #lyricQuery {
     background-color: lightgray;
@@ -47,8 +49,12 @@ body {
     width: 90%;
     display: block;
     margin: auto;
+
+}
+.container div {
+   background: transparent;
 }
 
-.container div {
-    background: transparent;
-}
+
+
+
