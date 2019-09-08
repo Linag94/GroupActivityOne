@@ -46,7 +46,7 @@
                   console.log(response.response.hits[0]);
               //for (i=0, i<response.response.hits.lenght; i++)
                       var songName = $("<h3>").text(response.response.hits[0].result.full_title);
-                      var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url);
+                      var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url).attr("class","artistImage");
                       //var artistURL = $("<a>").attr("href", response.response.hits[0].result.stats.url);
                       var artistName = $("<h3>").text(response.response.hits[0].result.primary_artist.name)
                   //console.log(artistURL);
