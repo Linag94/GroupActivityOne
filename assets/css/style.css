@@ -20,6 +20,30 @@ body {
    margin-bottom: 25px;
    border-radius: 5px;
 }
+#songSample {
+   background-color: lightgray;
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 5px;
+}
+#songLyrics {
+   background-color: lightgray;
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 5px;
+} 
+#artistInfo {
+   background-color: lightgray;
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 5px;
+} 
+#tourDates {
+   background-color: lightgray;
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 5px;
+}   
 #queryResults {
    background-color: lightgray;
    padding: 25px;
