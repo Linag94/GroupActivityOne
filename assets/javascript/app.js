@@ -46,7 +46,7 @@ var songSnippets =[];
         $("#tourDates").append(tourDates);
         }) 
     };
-
+    //Function is called from line 112, "api_path" key returned in the lyric lookup for song, is used directly in the Genius API script that returns apple music player
     function musicSample(api_path){
         var settings = {
             "async": true,
@@ -62,6 +62,7 @@ var songSnippets =[];
         $.ajax(settings).then(function (response) {
             console.log(response);
 
+        //apple music player targeted from the return, delivered to the dom, in its own div for targeting and treatment
         var playSong = $("<a>").attr("href", response.response.song.apple_music_player_url).text("Click for Song Sample")
         $("#songSample").empty();
         $("#songSample").append(playSong)     
@@ -92,7 +93,9 @@ var songSnippets =[];
                 
                 //console.log (settings);  
                 console.log(response.response.hits[0]); 
-
+                    // window.localStorage.setItem("name",JSON.stringify({
+                    //     "car": "nissan"
+                    // }))
                     var songName = $("<h5>").text(response.response.hits[0].result.full_title);
                     var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url).attr("class", "artistImage");
                     var songLyrics = $("<a>").attr("href", response.response.hits[0].result.url).text("Click for Song Lyrics");
