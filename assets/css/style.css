@@ -11,8 +11,7 @@ body {
 }
 
 #lyricQuery {
-    background-color: lightgray;
-    /* background:transparent url('/images/trans-bg.png') repeat center top; */
+    background-color:lightgray; 
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 5px;
