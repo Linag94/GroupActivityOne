@@ -24,6 +24,13 @@ function createObject() {
         };
     };
 
+    // clear icons
+    $(document).ready(function(){
+        $("button").click(function(){
+          $("<div class=imgCard>").empty();
+        });
+      });
+
     // captures user input on form to be processed by Genius
     $("#Find-Song").on("click", function(event){
         event.preventDefault();
@@ -43,9 +50,9 @@ function createObject() {
         method: "GET"
         }).then(function(response) {
         // Constructing HTML containing the artist information 
-        var tourDates = $("<a>").attr("href", response.url).text("Click for Upcoming Tour Dates");
+        var tourDates = $("<a>").attr("href", response.url).html('<i class="icon  fas fa-calendar-alt fa-3x"></i>');
         $("#tourDates").empty();
-        $("#tourDates").append(tourDates);
+        $(".imgCard").append(tourDates);
         }) 
     };
     //Function is called from line 112, "api_path" key returned in the lyric lookup for song, is used directly in the Genius API script that returns apple music player
@@ -65,10 +72,9 @@ function createObject() {
             console.log(response);
 
         //apple music player targeted from the return, delivered to the dom, in its own div for targeting and treatment
-        var playSong = $("<a>").attr("href", response.response.song.apple_music_player_url).text("Click for Song Sample")
+        var playSong = $("<a>").attr("href", response.response.song.apple_music_player_url).html('<i class="icon fas fa-music fa-3x"></i>')
         $("#songSample").empty();
-        $("#songSample").append(playSong)     
-        
+        $(".imgCard").append(playSong)
         });
 
     }
@@ -98,13 +104,13 @@ function createObject() {
                        
                     var songName = $("<h4>").text(response.response.hits[0].result.full_title);
                     var artistImage = $("<img>").attr("src", response.response.hits[0].result.primary_artist.header_image_url).attr("class", "artistImage");
-                    var songLyrics = $("<a>").attr("href", response.response.hits[0].result.url).text("Click for Song Lyrics");
-                    var artistInfo = $("<a>").attr("href", response.response.hits[0].result.primary_artist.url).text("Click for Artist Info.");
+                    var songLyrics = $("<a>").attr("href", response.response.hits[0].result.url).html('<i class="icon far fa-file-alt fa-3x"></i>');
+                    var artistInfo = $("<a>").attr("href", response.response.hits[0].result.primary_artist.url).html('<i class="icon fab fa-facebook fa-3x"></i>');
                     var artistName = $("<h5>").text(response.response.hits[0].result.primary_artist.name); 
                     $("#songLyrics").empty();
-                    $("#songLyrics").append(songLyrics) 
+                    $(".imgCard").append(songLyrics) 
                     $("#artistInfo").empty();
-                    $("#artistInfo").append(artistInfo)
+                    $(".imgCard").append(artistInfo)
                     $("#gifs-appear-here").empty();
                     $("#gifs-appear-here").append(songName, artistImage, artistName)
 
