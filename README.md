@@ -14,7 +14,7 @@ Music search bar that allows you to search a song based on a lyric you remeber f
 
 ## Deployment
 
-[here](http://www.dropwizard.io/1.0.2/docs/)
+[here](https://linag94.github.io/Lyricult/)
 
 ## Built With
 
